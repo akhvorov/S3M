@@ -5,7 +5,14 @@ This repository contains the code of our
 paper "S3M: Siamese Stack (Trace) Similarity Measure".
 
 # Data
-The data presented as a list of report in the following `JSON` format:
+
+## NetBeans
+You can find NetBeans dataset from paper to reproduce experiments 
+on [Figshare](https://figshare.com/articles/dataset/netbeans_stacktraces_json/14135003).
+
+## Format
+You can use other datasets that match the following format.
+The data presented as a list of report in the following JSON:
 ```
 [
     {
@@ -15,10 +22,10 @@ The data presented as a list of report in the following `JSON` format:
         "stacktrace": {
             "exception": ["java.lang.Exception"], 
             "frames": [
-                {"function": "java.util.ArrayList.get", "depth": 0}, 
-                {"function": "com.company.Class1.method1", "depth": 1}, 
-                {"function": "com.company.Class2.method2", "depth": 2}, 
-                {"function": "com.company.Class1.method2", "depth": 3}
+                {"function": "java.util.ArrayList.get"}, 
+                {"function": "com.company.Class1.method1"}, 
+                {"function": "com.company.Class2.method2"}, 
+                {"function": "com.company.Class1.method2"}
             ]
         }
     },
@@ -29,8 +36,8 @@ The data presented as a list of report in the following `JSON` format:
         "stacktrace": {
             "exception": ["com.company.MyException"], 
             "frames": [  
-                {"function": "com.company.Class1.method2", "depth": 0}, 
-                {"function": "com.company.Class1.main", "depth": 1}
+                {"function": "com.company.Class1.method2"}, 
+                {"function": "com.company.Class1.main"}
             ]
         }
     }
@@ -42,8 +49,7 @@ where
 - `creation_ts` – timestamp of report creation
 
 `stacktrace` field contains information about report content such as 
-exception classes and stack frames. Frames should include information
-about the depth from the top of the stack.
+exception classes and stack frames.
 
 # Usage
 ### Install
